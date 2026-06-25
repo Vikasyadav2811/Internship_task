@@ -1,0 +1,67 @@
+.like-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--color-paper-raised);
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-ink);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease,
+    color 0.15s ease, border-color 0.15s ease;
+}
+
+.like-stamp:hover {
+  background: var(--color-marigold);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+.like-stamp:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.like-stamp-mark {
+  font-size: 1.05em;
+  color: var(--color-marigold-dark);
+  transition: color 0.15s ease, transform 0.2s ease;
+}
+
+.like-stamp.is-liked {
+  background: var(--color-terracotta);
+  border-color: var(--color-terracotta-dark);
+  color: var(--color-paper-raised);
+}
+
+.like-stamp.is-liked .like-stamp-mark {
+  color: var(--color-paper-raised);
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.like-stamp.is-liked .like-stamp-count {
+  color: var(--color-paper-raised);
+}
+
+.like-stamp--sm {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+.like-stamp--lg {
+  padding: 10px 20px;
+  font-size: 1.05rem;
+}
+
+@keyframes stampPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25) rotate(-6deg); }
+  100% { transform: scale(1); }
+}
+
+.like-stamp.is-liked .like-stamp-mark {
+  animation: stampPop 0.3s ease;
+}

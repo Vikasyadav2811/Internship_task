@@ -1,0 +1,68 @@
+.masthead {
+  border-bottom: 4px solid var(--color-ink);
+  background: var(--color-paper-raised);
+  box-shadow: 0 4px 0 rgba(23, 18, 14, 0.06);
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 18px 20px;
+}
+
+.masthead-logo-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.masthead-logo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: contain;
+  user-select: none;
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  user-select: text;
+  cursor: text;
+}
+
+.masthead-sub {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-paper-raised);
+  background: var(--color-sky);
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+  user-select: text;
+  cursor: text;
+}
+
+@media (max-width: 480px) {
+  .masthead-inner {
+    padding: 14px 16px;
+  }
+  .masthead-logo {
+    width: 32px;
+    height: 32px;
+  }
+  .masthead-title {
+    font-size: 1.9rem;
+  }
+}

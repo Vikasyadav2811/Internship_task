@@ -1,0 +1,87 @@
+.post-card {
+  position: relative;
+  background: var(--color-paper-raised);
+  border: 2.5px solid var(--color-ink);
+  border-radius: 8px;
+  padding: 22px 20px 16px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Accent bar across the top, colored per author */
+.post-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--card-accent, var(--color-marigold));
+}
+
+.post-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.post-card:hover .post-card-content {
+  text-decoration: none;
+}
+
+.post-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.post-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.post-card-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.post-card-author {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--color-ink);
+}
+
+.post-card-author:hover {
+  color: var(--color-terracotta-dark);
+  text-decoration: underline;
+}
+
+.post-card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-ink-soft);
+  text-transform: lowercase;
+}
+
+.post-card-content {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-ink);
+  margin: 0 0 16px;
+}
+
+.post-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.post-card-comments {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+}

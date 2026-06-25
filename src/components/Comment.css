@@ -1,0 +1,32 @@
+.comment {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment-body {
+  flex: 1;
+}
+
+.comment-author {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--color-ink);
+}
+
+.comment-author:hover {
+  color: var(--color-terracotta-dark);
+  text-decoration: underline;
+}
+
+.comment-text {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-ink);
+}

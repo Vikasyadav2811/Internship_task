@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color tokens — warm paper base, bolder & more saturated accents */
+  --color-paper: #FBF5E9;
+  --color-paper-raised: #FFFFFF;
+  --color-ink: #17120E;
+  --color-ink-soft: #6B6157;
+
+  --color-marigold: #FFB323;
+  --color-marigold-dark: #D98A00;
+  --color-terracotta: #FF5A40;
+  --color-terracotta-dark: #D6371E;
+  --color-sage: #14A06A;
+  --color-sage-dark: #0E7A50;
+  --color-grape: #6C4BF5;
+  --color-sky: #1683E6;
+
+  --color-line: #ECE2CC;
+
+  /* Hard "block" shadows for the neo-brutalist look */
+  --shadow-sm: 3px 3px 0 var(--color-ink);
+  --shadow-md: 5px 5px 0 var(--color-ink);
+  --shadow-lg: 7px 7px 0 var(--color-ink);
+
+  /* Type */
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-body: 'Source Sans 3', -apple-system, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-paper);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(23, 18, 14, 0.06) 1px, transparent 0);
+  background-size: 22px 22px;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-grape);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

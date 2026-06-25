@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Vishal Jaiswar",
+      "avatarColor": "#FFB323",
+      "bio": "Backend dev who self-hosts everything. If it has an API, I've probably automated it. Currently deep in home-lab rabbit holes."
+    },
+    {
+      "id": "u2",
+      "name": "Sachin Yadav",
+      "avatarColor": "#14A06A",
+      "bio": "Tooling nerd building small scripts for small problems. Will happily spend four hours automating a five-minute task and call it a win."
+    },
+    {
+      "id": "u3",
+      "name": "Mohit Kumar",
+      "avatarColor": "#FF5A40",
+      "bio": "Frontend & design systems. I care far too much about spacing tokens, button states, and getting dark mode exactly right."
+    },
+    {
+      "id": "u4",
+      "name": "Harshit Tripathi",
+      "avatarColor": "#1683E6",
+      "bio": "Hardware tinkerer and weekend maker. Pi Picos, 3D prints, and keyboards held together by hope and solder."
+    }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "authorId": "u1",
+      "content": "Turned an old laptop into a home server this weekend. Docker Compose running Pi-hole, a self-hosted wiki, and nightly backups to an external drive. Network-wide ad blocking alone made it worth the afternoon.",
+      "likeCount": 38,
+      "comments": [
+        { "id": "c1", "authorId": "u2", "text": "Pi-hole is a game changer. Add Unbound next to it for recursive DNS so you stop leaking every query to an upstream resolver." },
+        { "id": "c2", "authorId": "u4", "text": "How are you doing backups? I switched to restic on a cron job — encrypted, deduplicated, and restores have actually saved me twice." },
+        { "id": "c3", "authorId": "u3", "text": "Saving this. Been meaning to repurpose my old ThinkPad instead of letting it collect dust on a shelf." }
+      ]
+    },
+    {
+      "id": "p2",
+      "authorId": "u2",
+      "content": "Set up a pre-commit hook that runs the formatter and lint --fix before every commit. Took fifteen minutes and I've completely stopped pushing broken formatting. Wish I'd done it years ago.",
+      "likeCount": 45,
+      "comments": [
+        { "id": "c4", "authorId": "u1", "text": "If you want it shareable across the team, the pre-commit framework keeps all the config in one YAML file and works for any language." },
+        { "id": "c5", "authorId": "u4", "text": "Pro tip: pass --cache to the linter so it only checks changed files. Took my hook from ~8s down to under a second." },
+        { "id": "c6", "authorId": "u3", "text": "Just make sure CI runs the same checks too — a hook only protects the people who installed it." }
+      ]
+    },
+    {
+      "id": "p3",
+      "authorId": "u3",
+      "content": "Refactored our component library to use CSS custom properties for every color and spacing value. Dark mode is now a single class on the root element instead of a 400-line override sheet. Night and day difference.",
+      "likeCount": 52,
+      "comments": [
+        { "id": "c7", "authorId": "u2", "text": "This is the way. Next step: generate the tokens from one JSON file so design and code share a single source of truth." },
+        { "id": "c8", "authorId": "u1", "text": "Are you honoring prefers-color-scheme so it follows the OS by default? Small touch, but people really notice it." },
+        { "id": "c9", "authorId": "u4", "text": "How did you name the tokens — semantic like --color-surface, or literal like --gray-100? Semantic scaled way better for us." }
+      ]
+    },
+    {
+      "id": "p4",
+      "authorId": "u4",
+      "content": "Built a 12-key macro pad over the weekend. Raspberry Pi Pico, hand-wired switches, flashed with QMK. Mapped a whole layer to my most-used editor shortcuts and git commands. Already can't work without it.",
+      "likeCount": 41,
+      "comments": [
+        { "id": "c10", "authorId": "u2", "text": "QMK is so good. Set up a leader key so you can chain commands instead of burning a physical key on every shortcut." },
+        { "id": "c11", "authorId": "u3", "text": "Did you 3D print the case? Would love the STL if you're open to sharing it." }
+      ]
+    },
+    {
+      "id": "p5",
+      "authorId": "u1",
+      "content": "Cut our app's load time from 4.2s to 0.9s: route-based code splitting, lazy-loaded images with explicit dimensions, and dropping a heavy date library for the native Intl API. Lighthouse went from 58 to 96.",
+      "likeCount": 60,
+      "comments": [
+        { "id": "c12", "authorId": "u3", "text": "Setting explicit width and height to kill layout shift is so underrated. CLS is the metric everyone forgets until it tanks the score." },
+        { "id": "c13", "authorId": "u2", "text": "What did you use to find the heavy bundles? A bundle visualizer made it painfully obvious where my dead weight was hiding." },
+        { "id": "c14", "authorId": "u4", "text": "Nice numbers. If you want to shave more, preload your fonts and set font-display: swap so text isn't invisible while they load." }
+      ]
+    },
+    {
+      "id": "p6",
+      "authorId": "u2",
+      "content": "Wrote one shell script that bootstraps a fresh machine: installs my CLI tools, clones my dotfiles, configures the shell, and sets up git. New laptop to fully working in about ten minutes.",
+      "likeCount": 47,
+      "comments": [
+        { "id": "c15", "authorId": "u4", "text": "Dotfiles plus a bootstrap script is the best gift you can give future-you. I keep mine in a bare git repo so I don't need any symlink juggling." },
+        { "id": "c16", "authorId": "u1", "text": "When you outgrow the script, Ansible does the same thing declaratively and is idempotent — re-running only fixes whatever drifted." }
+      ]
+    }
+  ]
+}
